@@ -1,0 +1,174 @@
+spawn_armor_battle_tank_unit = {
+	division_template = {
+		name = "MBT Battalion"
+		priority = 1
+		template_counter = 0
+		regiments = {
+			armor_main_battle_tank = { x = 0 y = 0 }
+			armor_main_battle_tank = { x = 0 y = 1 }
+			armor_main_battle_tank = { x = 0 y = 2 }
+			armor_main_battle_tank = { x = 1 y = 0 }
+			armor_main_battle_tank = { x = 1 y = 1 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"1st MBT Division\" division_template = \"MBT Battalion\" start_experience_factor = 1 start_equipment_factor = 1"
+			owner = ROOT
+		}
+	}
+	add_equipment_production = {
+		equipment = {
+			type = main_battle_tank_equipment_1
+			#creator = "ROOT"
+		}
+		requested_factories = 1
+		progress = 0.01
+		efficiency = 100
+	}
+}
+spawn_armor_light_tank_unit = {
+	division_template = {
+		name = "LBT Battalion"
+		priority = 1
+		template_counter = 0
+		regiments = {
+			armor_light_battle_tank = { x = 0 y = 0 }
+			armor_light_battle_tank = { x = 0 y = 1 }
+			armor_light_battle_tank = { x = 0 y = 2 }
+			armor_light_battle_tank = { x = 1 y = 0 }
+			armor_light_battle_tank = { x = 1 y = 1 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"1st LBT Division\" division_template = \"LBT Battalion\" start_experience_factor = 1 start_equipment_factor = 1"
+			owner = ROOT
+		}
+	} 
+	add_equipment_production = {
+		equipment = {
+			type = light_battle_tank_equipment_1
+			#creator = "ROOT"
+		}
+		requested_factories = 1
+		progress = 0.01
+		efficiency = 100
+	}
+}
+spawn_armor_tank_destroyer_unit = {
+	division_template = {
+		name = "Tank Destroyer Battalion"
+		priority = 1
+		template_counter = 0
+		regiments = {
+			armor_tank_destroyer = { x = 0 y = 0 }
+			armor_tank_destroyer = { x = 0 y = 1 }
+			armor_tank_destroyer = { x = 0 y = 2 }
+			armor_tank_destroyer = { x = 1 y = 0 }
+			armor_tank_destroyer = { x = 1 y = 1 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"1st TDS Division\" division_template = \"Tank Destroyer Battalion\" start_experience_factor = 1 start_equipment_factor = 1"
+			owner = ROOT
+		}
+	} 
+	add_equipment_production = {
+		equipment = {
+			type = tank_destroyer_equipment_1
+			#creator = "ROOT"
+		}
+		requested_factories = 1
+		progress = 0.01
+		efficiency = 100
+	}
+}
+spawn_armor_superheavy_battle_tank_unit = {
+	division_template = {
+		name = "SHT Battalion"
+		priority = 1
+		template_counter = 0
+		regiments = {
+			armor_superheavy_battle_tank = { x = 0 y = 0 }
+			armor_superheavy_battle_tank = { x = 0 y = 1 }
+			armor_superheavy_battle_tank = { x = 0 y = 2 }
+			armor_superheavy_battle_tank = { x = 1 y = 0 }
+			armor_superheavy_battle_tank = { x = 1 y = 1 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"1st SHT Division\" division_template = \"SHT Battalion\" start_experience_factor = 1 start_equipment_factor = 1"
+			owner = ROOT
+		}
+	} 
+	add_equipment_production = {
+		equipment = {
+			type = superheavy_battle_tank_equipment_1
+			#creator = "ROOT"
+		}
+		requested_factories = 1
+		progress = 0.01
+		efficiency = 100
+	}
+}
+spawn_armor_hovercraft_tank_unit = {
+	division_template = {
+		name = "HVC Battalion"
+		priority = 1
+		template_counter = 0
+		regiments = {
+			armor_hovercraft_tank = { x = 0 y = 0 }
+			armor_hovercraft_tank = { x = 0 y = 1 }
+			armor_hovercraft_tank = { x = 0 y = 2 }
+			armor_hovercraft_tank = { x = 1 y = 0 }
+			armor_hovercraft_tank = { x = 1 y = 1 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"1st HVC Division\" division_template = \"HVC Battalion\" start_experience_factor = 1 start_equipment_factor = 1"
+			owner = ROOT
+		}
+	} 
+	add_equipment_production = {
+		equipment = {
+			type = hovercraft_tank_equipment_1
+			#creator = "ROOT"
+		}
+		requested_factories = 1
+		progress = 0.01
+		efficiency = 100
+	}
+}
+spawn_armor_cyberwalk_unit = {
+	division_template = {
+		name = "Cyber-Mech Battalion"
+		priority = 1
+		template_counter = 0
+		regiments = {
+			armor_cyberwalk = { x = 0 y = 0 }
+			armor_cyberwalk = { x = 0 y = 1 }
+			armor_cyberwalk = { x = 0 y = 2 }
+			armor_cyberwalk = { x = 1 y = 0 }
+			armor_cyberwalk = { x = 1 y = 1 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"1st CBW Division\" division_template = \"Cyber-Mech Battalion\" start_experience_factor = 1 start_equipment_factor = 1"
+			owner = ROOT
+		}
+	} 
+	add_equipment_production = {
+		equipment = {
+			type = cyberwalk_equipment_1
+			#creator = "ROOT"
+		}
+		requested_factories = 1
+		progress = 0.01
+		efficiency = 100
+	}
+}

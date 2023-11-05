@@ -1,0 +1,123 @@
+add_namespace = cp_tech_event
+
+## LBT Unlock Event
+country_event = {
+	id = cp_tech_event.1
+	title = cp_tech_event.1.t
+	desc = cp_tech_event.1.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			spawn_armor_light_tank_unit = yes
+		}
+	}
+	
+	option = {
+		name = cp_tech_event.1.a
+		effect_tooltip = { spawn_armor_light_tank_unit = yes }
+	}
+}
+
+## LBT Unlock Event
+country_event = {
+	id = cp_tech_event.2
+	title = cp_tech_event.2.t
+	desc = cp_tech_event.2.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			spawn_armor_battle_tank_unit = yes
+		}
+	}
+	
+	option = {
+		name = cp_tech_event.2.a
+		effect_tooltip = { spawn_armor_battle_tank_unit = yes }
+	}
+}
+## Tank Destroyer Unlock Event
+country_event = {
+	id = cp_tech_event.3
+	title = cp_tech_event.3.t
+	desc = cp_tech_event.3.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			spawn_armor_tank_destroyer_unit = yes
+		}
+	}
+	
+	option = {
+		name = cp_tech_event.3.a
+		effect_tooltip = { spawn_armor_tank_destroyer_unit = yes }
+	}
+}
+## SHT Unlock Event
+country_event = {
+	id = cp_tech_event.4
+	title = cp_tech_event.4.t
+	desc = cp_tech_event.4.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			spawn_armor_superheavy_battle_tank_unit = yes
+		}
+	}
+	
+	option = {
+		name = cp_tech_event.4.a
+		effect_tooltip = { spawn_armor_superheavy_battle_tank_unit = yes }
+	}
+}
+## Hovercraft Unlock Event
+country_event = {
+	id = cp_tech_event.5
+	title = cp_tech_event.5.t
+	desc = cp_tech_event.5.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			spawn_armor_hovercraft_tank_unit = yes
+		}
+	}
+	
+	option = {
+		name = cp_tech_event.5.a
+		effect_tooltip = { spawn_armor_hovercraft_tank_unit = yes }
+	}
+}
+## Cyberwalker Unlock Event
+country_event = {
+	id = cp_tech_event.6
+	title = cp_tech_event.6.t
+	desc = cp_tech_event.6.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			spawn_armor_cyberwalk_unit = yes
+		}
+	}
+	
+	option = {
+		name = cp_tech_event.6.a
+		effect_tooltip = { spawn_armor_cyberwalk_unit = yes }
+	}
+}

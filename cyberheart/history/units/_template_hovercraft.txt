@@ -1,0 +1,11 @@
+division_template = {
+	name = "Hovercraft Tank Equipment"	
+
+	regiments = {
+		armor_hovercraft_tank  = { x = 0 y = 0 }
+		armor_hovercraft_tank  = { x = 0 y = 1 }
+        armor_hovercraft_tank  = { x = 0 y = 2 }
+        armor_hovercraft_tank  = { x = 1 y = 0 }
+		armor_hovercraft_tank  = { x = 1 y = 1 }
+	}
+}

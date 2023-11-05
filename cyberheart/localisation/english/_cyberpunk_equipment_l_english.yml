@@ -1,0 +1,54 @@
+﻿l_english:
+		main_battle_tank_equipment_1: "Main Battle Tank"
+		main_battle_tank_equipment_1_desc: ""
+		main_battle_tank_equipment_1_short: "MBT"
+
+	  main_battle_tank_equipment_2: "Improved Main Battle Tank"
+		main_battle_tank_equipment_2_desc: ""
+		main_battle_tank_equipment_2_short: "MBT MkII"
+
+	  main_battle_tank_equipment_3: "Advanced Main Battle Tank"
+		main_battle_tank_equipment_3_desc: ""
+		main_battle_tank_equipment_3_short: "MBT MkIII"
+
+	  tank_destroyer_equipment_1: "Tank Destroyer"
+		tank_destroyer_equipment_1_desc: ""
+		tank_destroyer_equipment_1_short: "DBT"
+
+	  tank_destroyer_equipment_2: "Improved Tank Destroyer"
+		tank_destroyer_equipment_2_desc: ""
+		tank_destroyer_equipment_2_short: "DBT MkII"
+
+	  superheavy_battle_tank_equipment_1: "Superheavy Battle Tank"
+		superheavy_battle_tank_equipment_1_desc: ""
+		superheavy_battle_tank_equipment_1_short: "SH-BT"
+
+	  superheavy_battle_tank_equipment_2: "Improved Superheavy Battle Tank"
+		superheavy_battle_tank_equipment_2_desc: ""
+		superheavy_battle_tank_equipment_2_short: "SH-BT MkII"
+
+    hovercraft_tank_equipment_1: "Hovercraft Tank"  
+		hovercraft_tank_equipment_1_desc: ""
+		hovercraft_tank_equipment_1_short: "HCT"
+
+	  hovercraft_tank_equipment_2: "Improved Hovercraft Tank"
+		hovercraft_tank_equipment_2_desc: ""
+		hovercraft_tank_equipment_2_short: "HCT MkII"
+
+	  light_battle_tank_equipment_1: "Light Battle Tank"  
+		light_battle_tank_equipment_1_desc: ""
+		light_battle_tank_equipment_1_short: "LBT"
+
+	  light_battle_tank_equipment_2: "Improved Light Battle Tank"  
+		light_battle_tank_equipment_2_desc: ""
+		light_battle_tank_equipment_2_short: "LBT MkII"
+
+	  cyberwalk_equipment_1: "Cyberwalker"  
+		cyberwalk_equipment_1_desc: ""
+		cyberwalk_equipment_1_short: "CW"
+
+	  cyberwalk_equipment_2: "Improved Cyberwalker"  
+		cyberwalk_equipment_2_desc: ""
+		cyberwalk_equipment_2_short: "CW MkII"
+	    
+		
