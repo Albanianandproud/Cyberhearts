@@ -8,9 +8,11 @@ state={
 		add_core_of = MXC
 		buildings = {
 			infrastructure = 1
-
 		}
-
+		victory_points = { 7136 1}#San Luis Potosí
+		victory_points = { 10172 1}#Aguascalientes
+		victory_points = { 11939 1}#Fresnillo
+		victory_points = { 1952 1}#Matehuala
 	}
 
 	provinces={
@@ -18,6 +20,10 @@ state={
 	}
 	manpower=2700000
 	buildings_max_level_factor=1.000
-	state_category=rural
+
+	state_category=state_level_04
+
+	
+
 	local_supplies=0.000
 }

@@ -8,9 +8,12 @@ state={
 		add_core_of = MXC
 		buildings = {
 			infrastructure = 1
-
 		}
-
+		victory_points = { 12835 4}#Monterrey
+		victory_points = { 5015 1}#Metamoros
+		victory_points = { 12051 1}#Reynosa
+		victory_points = { 10870 1}#Ciudad Victoria
+		victory_points = { 12740 1}#La Pesca
 	}
 
 	provinces={
@@ -18,6 +21,10 @@ state={
 	}
 	manpower=8500000
 	buildings_max_level_factor=1.000
-	state_category=rural
+
+	state_category=state_level_04
+
+	
+
 	local_supplies=0.000
 }

@@ -8,8 +8,10 @@ state={
 		owner = CIP
 		add_core_of = CIP
 		buildings = { infrastructure = 1 }
+		victory_points = { 12033 1} #Tuxtla Gutiérrez
 	}
 	manpower=3390000
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=state_level_04	
+	
 }

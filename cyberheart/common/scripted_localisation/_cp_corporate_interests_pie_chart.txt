@@ -1,4 +1,5 @@
-	defined_text = { 
+
+    defined_text = { 
 		name = GetCINameSlot1
 		text = { trigger = { check_variable = { corporate_id^0 = 1 } } localization_key = CorporateID_1_TITLE }
 		text = { trigger = { check_variable = { corporate_id^0 = 2 } } localization_key = CorporateID_2_TITLE }

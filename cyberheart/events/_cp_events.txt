@@ -12,4 +12,19 @@ country_event = {
 		name = cp_event.1.a
 		add_war_support = 0.02		
 	}
+
+	option = {
+		name = cp_event.1.b
+		add_war_support = 0.02		
+	}
+
+	option = {
+		name = cp_event.1.c
+		add_war_support = 0.02		
+	}
+
+	option = {
+		name = cp_event.1.e
+		add_war_support = 0.02		
+	}
 }

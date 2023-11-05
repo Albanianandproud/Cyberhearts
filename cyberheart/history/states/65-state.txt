@@ -8,16 +8,24 @@ state={
 		add_core_of = MXC
 		buildings = {
 			infrastructure = 1
-
 		}
-
+		victory_points = { 7964 1}#Bahía de los Ángeles
+		victory_points = { 1792 1}#San Quintín#
+		victory_points = { 12461 1}#Tijuana Metroplex
+		victory_points = { 12315 1}#Mexicali
 	}
 
 	provinces={
 		1892 4120 7082 7964 12461 12859 13215 13216 
 	}
-	manpower=1500000
+	manpower=3100000
 	buildings_max_level_factor=1.000
-	state_category=rural
+
+	state_category=state_level_04
+
 	local_supplies=0.000
+
+	resources={
+        oil = 6
+	}
 }

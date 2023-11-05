@@ -1,5 +1,26 @@
+#!gfx:interface\countrytechtreeview.gui
+#!gfx:interface\_cyberpunk_equipment.gfx
+#!gfx:interface\_cyberpunk_technology.gfx
+## Code above is for VSC HOI4 utility. pls leave ty
+
 technologies = {
 	cp_armor_tech_1 = {
+
+		enable_equipments = {
+			main_battle_tank_equipment_1
+		}
+
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = armor_main_battle_tank }
+			NOT = { any_country_division = { division_has_battalion_in_template = armor_main_battle_tank } }
+		}
+
+		on_research_complete = {
+			## Unlocks are handled through event. Extra Immersion
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			custom_effect_tooltip = UNLOCK_FREE_DIVISION
+			country_event = cp_tech_event.2
+		}
 
 		path = {
 			leads_to_tech = cp_armor_tech_2
@@ -7,16 +28,21 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = cp_armor_tech_16
+			leads_to_tech = cp_armor_tech_13
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_14
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 2
+		research_cost = 2.5
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 9 y = 9 }
+			position = { x = 15 y = 1 }
 		}
 		
 		categories = {
@@ -30,32 +56,28 @@ technologies = {
 
 	cp_armor_tech_2 = {
 
+		category_tanks = {
+			reliability = 0.02
+			maximum_speed = 0.01 
+		}
+
 		path = {
 			leads_to_tech = cp_armor_tech_3
 			research_cost_coeff = 1
-		}	
-
-		path = {
-			leads_to_tech = cp_armor_tech_7
-			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = cp_armor_tech_11
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = cp_armor_tech_12
+			leads_to_tech = cp_armor_tech_15
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 2
+		
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 9 y = 5 }
+			position = { x = 15 y = 5 }
 		}
 		
 		categories = {
@@ -69,10 +91,19 @@ technologies = {
 
 	cp_armor_tech_3 = {
 
+		dependencies = {
+			cp_armor_tech_13 = 1
+			cp_armor_tech_14 = 1
+		}
+
+		enable_equipments = {
+			main_battle_tank_equipment_2
+		}
+
 		path = {
 			leads_to_tech = cp_armor_tech_4
 			research_cost_coeff = 1
-		}	
+		}
 
 		path = {
 			leads_to_tech = cp_armor_tech_5
@@ -80,16 +111,26 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = cp_armor_tech_14
+			leads_to_tech = cp_armor_tech_6
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_7
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_8
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 2
+		research_cost = 2.75
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 6 y = 5 }
+			position = { x = 19 y = 5 }
 		}
 		
 		categories = {
@@ -102,13 +143,22 @@ technologies = {
 	}
 
 	cp_armor_tech_4 = {
-		
-		research_cost = 2
+
+		category_main_battle_tank = {
+			ap_attack = 0.025
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = main_tank_C_upgrade_variant
+		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 2 y = 5 }
+			position = { x = 20 y = 3 }
 		}
 		
 		categories = {
@@ -121,18 +171,17 @@ technologies = {
 	}
 
 	cp_armor_tech_5 = {
-		
-		research_cost = 2
 
-		path = {
-			leads_to_tech = cp_armor_tech_6
-			research_cost_coeff = 1
+		category_main_battle_tank = {
+			max_strength = 0.1
 		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 4 y = 3}
+			position = { x = 20 y = 7 }
 		}
 		
 		categories = {
@@ -145,13 +194,22 @@ technologies = {
 	}
 
 	cp_armor_tech_6 = {
-		
-		research_cost = 2
+
+		category_main_battle_tank = {
+			hardness = 0.05
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = main_tank_D_upgrade_variant
+		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 4 y = 1 }
+			position = { x = 18 y = 3 }
 		}
 		
 		categories = {
@@ -165,27 +223,16 @@ technologies = {
 
 	cp_armor_tech_7 = {
 
-		path = {
-			leads_to_tech = cp_armor_tech_8
-			research_cost_coeff = 1
+		category_main_battle_tank = {
+			breakthrough = 0.02
 		}
 
-		path = {
-			leads_to_tech = cp_armor_tech_9
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = cp_armor_tech_15
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 12 y = 5 }
+			position = { x = 18 y = 7 }
 		}
 		
 		categories = {
@@ -198,13 +245,44 @@ technologies = {
 	}
 
 	cp_armor_tech_8 = {
-		
-		research_cost = 2
+
+		dependencies = {
+			cp_armor_tech_4 = 1
+			cp_armor_tech_5 = 1
+			cp_armor_tech_6 = 1
+			cp_armor_tech_7 = 1
+		}
+
+		enable_equipments = {
+			main_battle_tank_equipment_3
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_9
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_10
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_11
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_12
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 16 y = 5 }
+			position = { x = 19 y = 11 }
 		}
 		
 		categories = {
@@ -217,13 +295,122 @@ technologies = {
 	}
 
 	cp_armor_tech_9 = {
-		
-		research_cost = 2
 
-		path = {
-			leads_to_tech = cp_armor_tech_10
-			research_cost_coeff = 1
+		category_main_battle_tank = {
+			soft_attack = 0.025
 		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 18 y = 9 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_10 = {
+
+		category_main_battle_tank = {
+			hard_attack = 0.025
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 20 y = 9 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_11 = {
+
+		category_main_battle_tank = {
+			armor_value = 0.03
+		}
+		category_tank_destroyer = {
+			armor_value = 0.03
+		}
+		category_hovercrafts = {
+			armor_value = 0.03
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = tank_destroyer_D_upgrade_variant
+			custom_effect_tooltip = superheavy_tank_D_upgrade_variant
+			custom_effect_tooltip = hovercraft_D_upgrade_variant
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 18 y = 13 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_12 = {
+
+		category_main_battle_tank = {
+			supply_consumption = -0.02
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 20 y = 13 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_13 = {
+
+		category_main_battle_tank = {
+			reliability = 0.01
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = main_tank_A_upgrade_variant
+		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
@@ -240,120 +427,18 @@ technologies = {
 		}
 	}
 
-	cp_armor_tech_10 = {
-		
-		research_cost = 2
-
-		start_year = 2040
-		folder = {
-			name = "vehicle_folder"
-			position = { x = 14 y = 1 }
-		}
-		
-		categories = {
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-	}
-
-	cp_armor_tech_11 = {
-		XOR = { cp_armor_tech_12 }
-		
-		research_cost = 2
-
-		path = {
-			leads_to_tech = cp_armor_tech_13
-			research_cost_coeff = 1
-		}
-
-		start_year = 2040
-		folder = {
-			name = "vehicle_folder"
-			position = { x = 7 y = 3 }
-		}
-		
-		categories = {
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-	}
-
-	cp_armor_tech_12 = {
-		XOR = { cp_armor_tech_11 }
-
-		research_cost = 2
-
-		path = {
-			leads_to_tech = cp_armor_tech_13
-			research_cost_coeff = 1
-		}
-
-		start_year = 2040
-		folder = {
-			name = "vehicle_folder"
-			position = { x = 11 y = 3 }
-		}
-		
-		categories = {
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-	}
-
-	cp_armor_tech_13 = {
-
-		dependencies = {
-			cp_armor_tech_3 = 1
-			cp_armor_tech_7 = 1
-		}
-
-		enable_equipments = {
-			superheavy_battle_tank_equipment
-		}
-
-		research_cost = 2
-
-		start_year = 2040
-		folder = {
-			name = "vehicle_folder"
-			position = { x = 9 y = 1 }
-		}
-		
-		categories = {
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-	}
-
 	cp_armor_tech_14 = {
 
-		enable_equipments = {
-			main_battle_tank_equipment
+		category_main_battle_tank = {
+			defense = 0.025
 		}
 
-		path = {
-			leads_to_tech = cp_armor_tech_31
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 6 y = 7 }
+			position = { x = 16 y = 3 }
 		}
 		
 		categories = {
@@ -367,21 +452,53 @@ technologies = {
 
 	cp_armor_tech_15 = {
 
+		dependencies = {
+			cp_armor_tech_13 = 1
+			cp_armor_tech_14 = 1
+		}
+
 		enable_equipments = {
-			light_battle_tank_equipment
+			tank_destroyer_equipment_1
+		}
+
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = armor_tank_destroyer }
+			NOT = { any_country_division = { division_has_battalion_in_template = armor_tank_destroyer } }
+		}
+
+		on_research_complete = {
+			## Unlocks are handled through event. Extra Immersion
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			custom_effect_tooltip = UNLOCK_FREE_DIVISION
+			country_event = cp_tech_event.3
 		}
 
 		path = {
-			leads_to_tech = cp_armor_tech_35
+			leads_to_tech = cp_armor_tech_16
 			research_cost_coeff = 1
 		}
 
-		research_cost = 2
+		path = {
+			leads_to_tech = cp_armor_tech_17
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_18
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_19
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.5
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 12 y = 7 }
+			position = { x = 11 y = 5 }
 		}
 		
 		categories = {
@@ -395,32 +512,26 @@ technologies = {
 
 	cp_armor_tech_16 = {
 
-		path = {
-			leads_to_tech = cp_armor_tech_17
-			research_cost_coeff = 1
+		category_tank_destroyer = {
+			max_strength = 0.1
 		}
 
-		path = {
-			leads_to_tech = cp_armor_tech_21
-			research_cost_coeff = 1
+		category_superheavy_battle_tank = {
+			max_strength = 0.1
 		}
 
-		path = {
-			leads_to_tech = cp_armor_tech_26
-			research_cost_coeff = 1
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = tank_destroyer_A_upgrade_variant
+			custom_effect_tooltip = superheavy_tank_A_upgrade_variant
 		}
-		
-		path = {
-			leads_to_tech = cp_armor_tech_27
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 9 y = 13 }
+			position = { x = 10 y = 3 }
 		}
 		
 		categories = {
@@ -434,27 +545,21 @@ technologies = {
 
 	cp_armor_tech_17 = {
 
-		path = {
-			leads_to_tech = cp_armor_tech_18
-			research_cost_coeff = 1
-		}	
-
-		path = {
-			leads_to_tech = cp_armor_tech_19
-			research_cost_coeff = 1
-		}	
-
-		path = {
-			leads_to_tech = cp_armor_tech_29
-			research_cost_coeff = 1
+		category_tank_destroyer = {
+			ap_attack  = 0.025
 		}
-		
-		research_cost = 2
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = tank_destroyer_C_upgrade_variant
+		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 6 y = 13 }
+			position = { x = 12 y = 3 }
 		}
 		
 		categories = {
@@ -467,13 +572,27 @@ technologies = {
 	}
 
 	cp_armor_tech_18 = {
-		
-		research_cost = 2
+
+		category_tank_destroyer = {
+			breakthrough = 0.025
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = tank_destroyer_C_upgrade_variant
+		}
+
+		research_cost = 2.25
+
+		path = {
+			leads_to_tech = cp_armor_tech_23
+			research_cost_coeff = 1
+		}
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 2 y = 13 }
+			position = { x = 11 y = 7 }
 		}
 		
 		categories = {
@@ -486,18 +605,42 @@ technologies = {
 	}
 
 	cp_armor_tech_19 = {
-		
-		research_cost = 2
+
+		dependencies = {
+			cp_armor_tech_16 = 1
+			cp_armor_tech_17 = 1
+		}
+
+		enable_equipments = {
+			tank_destroyer_equipment_2
+		}
 
 		path = {
 			leads_to_tech = cp_armor_tech_20
 			research_cost_coeff = 1
 		}
 
+		path = {
+			leads_to_tech = cp_armor_tech_21
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_22
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_22a
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 4 y = 15 }
+			position = { x = 11 y = 11 }
 		}
 		
 		categories = {
@@ -510,13 +653,17 @@ technologies = {
 	}
 
 	cp_armor_tech_20 = {
-		
-		research_cost = 2
+
+		category_tank_destroyer = {
+			supply_consumption = -0.02
+		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 4 y = 17 }
+			position = { x = 10 y = 9 }
 		}
 		
 		categories = {
@@ -530,22 +677,62 @@ technologies = {
 
 	cp_armor_tech_21 = {
 
-		path = {
-			leads_to_tech = cp_armor_tech_22
-			research_cost_coeff = 1
-		}	
-
-		path = {
-			leads_to_tech = cp_armor_tech_24
-			research_cost_coeff = 1
+		category_tank_destroyer = {
+			hard_attack = 0.025
 		}
 
-		path = {
-			leads_to_tech = cp_armor_tech_30
-			research_cost_coeff = 1
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = superheavy_tank_C_upgrade
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 12 y = 9 }
 		}
 		
-		research_cost = 2
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_22 = {
+
+		category_tank_destroyer = {
+			max_organisation = 1
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 10 y = 13 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_22a = {
+
+		category_tank_destroyer = {
+			soft_attack = 0.025
+		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
@@ -562,14 +749,40 @@ technologies = {
 		}
 	}
 
-	cp_armor_tech_22 = {
-		
-		research_cost = 2
+	cp_armor_tech_23 = {
+
+		enable_equipments = {
+			superheavy_battle_tank_equipment_1
+		}
+
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = armor_superheavy_battle_tank }
+			NOT = { any_country_division = { division_has_battalion_in_template = armor_superheavy_battle_tank } }
+		}
+
+		on_research_complete = {
+			## Unlocks are handled through event. Extra Immersion
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			custom_effect_tooltip = UNLOCK_FREE_DIVISION
+			country_event = cp_tech_event.4
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_24
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_25
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 16 y = 13 }
+			position = { x = 15 y = 9 }
 		}
 		
 		categories = {
@@ -582,18 +795,22 @@ technologies = {
 	}
 
 	cp_armor_tech_24 = {
-		
-		research_cost = 2
+
+		category_superheavy_battle_tank = {
+			maximum_speed = 0.02
+		}
 
 		path = {
-			leads_to_tech = cp_armor_tech_25
+			leads_to_tech = cp_armor_tech_47
 			research_cost_coeff = 1
 		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 14 y = 15 }
+			position = { x = 14 y = 11 }
 		}
 		
 		categories = {
@@ -606,13 +823,37 @@ technologies = {
 	}
 
 	cp_armor_tech_25 = {
-		
-		research_cost = 2
+
+		category_superheavy_battle_tank = {
+			supply_consumption = -0.02
+		}
+
+		category_tank_destroyer = {
+			supply_consumption = -0.02
+		}
+
+		category_main_battle_tank = {
+			supply_consumption = -0.02
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = tank_destroyer_B_upgrade_variant
+			custom_effect_tooltip = superheavy_tank_B_upgrade_variant
+			custom_effect_tooltip = main_tank_B_upgrade_variant
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_47
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.25
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 14 y = 17 }
+			position = { x = 16 y = 11 }
 		}
 		
 		categories = {
@@ -625,19 +866,43 @@ technologies = {
 	}
 
 	cp_armor_tech_26 = {
-		XOR = { cp_armor_tech_27 }
-		
-		research_cost = 2
+
+		enable_equipments = {
+			light_battle_tank_equipment_1
+		} 
+
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = armor_light_battle_tank }
+			NOT = { any_country_division = { division_has_battalion_in_template = armor_light_battle_tank } }
+		}
+		on_research_complete = {
+			## Unlocks are handled through event. Extra Immersion
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			custom_effect_tooltip = UNLOCK_FREE_DIVISION
+			country_event = cp_tech_event.1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_27
+			research_cost_coeff = 1
+		}
 
 		path = {
 			leads_to_tech = cp_armor_tech_28
 			research_cost_coeff = 1
 		}
 
+		path = {
+			leads_to_tech = cp_armor_tech_29
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.5
+
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 7 y = 15 }
+			position = { x = 3 y = 1 }
 		}
 		
 		categories = {
@@ -650,19 +915,22 @@ technologies = {
 	}
 
 	cp_armor_tech_27 = {
-		XOR = { cp_armor_tech_26 }
 
-		research_cost = 2
-
-		path = {
-			leads_to_tech = cp_armor_tech_28
-			research_cost_coeff = 1
+		category_light_battle_tank = {
+			hard_attack = 0.05
 		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = light_tank_C_upgrade_variant
+		}
+
+		research_cost = 1.85
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x =11 y = 15 }
+			position = { x = 2 y = 3 }
 		}
 		
 		categories = {
@@ -676,21 +944,21 @@ technologies = {
 
 	cp_armor_tech_28 = {
 
-		dependencies = {
-			cp_armor_tech_17 = 1
-			cp_armor_tech_21 = 1
+		category_light_battle_tank = {
+			armor_value = 0.05
 		}
 
-		enable_equipments = {
-			cyberwalk_equipment
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = light_tank_D_upgrade_variant
 		}
 
-		research_cost = 2
+		research_cost = 1.85
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 9 y = 17 }
+			position = { x = 4 y = 3 }
 		}
 		
 		categories = {
@@ -704,21 +972,31 @@ technologies = {
 
 	cp_armor_tech_29 = {
 
-		enable_equipments = {
-			tank_destroyer_equipment
+		category_light_battle_tank = {
+			breakthrough = 0.02
 		}
 
+		research_cost = 1.85
+
 		path = {
-			leads_to_tech = cp_armor_tech_32
+			leads_to_tech = cp_armor_tech_30
 			research_cost_coeff = 1
 		}
 
-		research_cost = 2
+		path = {
+			leads_to_tech = cp_armor_tech_33
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_39
+			research_cost_coeff = 1
+		}
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 6 y = 11 }
+			position = { x = 3 y = 5 }
 		}
 		
 		categories = {
@@ -732,40 +1010,26 @@ technologies = {
 
 	cp_armor_tech_30 = {
 
+		dependencies = {
+			cp_armor_tech_27 = 1
+			cp_armor_tech_28 = 1
+		}
+
 		enable_equipments = {
-			hovercraft_tank_equipment
-		}
+			light_battle_tank_equipment_2
+		} 
 
 		path = {
-			leads_to_tech = cp_armor_tech_36
+			leads_to_tech = cp_armor_tech_31
 			research_cost_coeff = 1
 		}
 
-		research_cost = 2
-
-		start_year = 2040
-		folder = {
-			name = "vehicle_folder"
-			position = { x = 12 y = 11 }
-		}
-		
-		categories = {
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-	}
-
-	cp_armor_tech_31 = {
-		
 		path = {
-			leads_to_tech = cp_armor_tech_33
+			leads_to_tech = cp_armor_tech_32
 			research_cost_coeff = 1
 		}
-		
-		research_cost = 2
+
+		research_cost = 2.75
 
 		start_year = 2040
 		folder = {
@@ -782,19 +1046,63 @@ technologies = {
 		}
 	}
 
-	cp_armor_tech_32 = {
+	cp_armor_tech_31 = {
+
+		category_light_battle_tank = {
+			max_strength = 0.1
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = light_tank_A_upgrade_variant
+			custom_effect_tooltip = hovercraft_A_upgrade_variant
+		}
+
+		research_cost = 1.85
 
 		path = {
-			leads_to_tech = cp_armor_tech_34
+			leads_to_tech = cp_armor_tech_46
 			research_cost_coeff = 1
-		}	
-		
-		research_cost = 2
+		}
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 3 y = 10 }
+			position = { x = 2 y = 10 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_32 = {
+
+		category_light_battle_tank = {
+			max_organisation = 1
+			maximum_speed = 0.01 
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = light_tank_B_upgrade_variant
+		}
+
+		research_cost = 1.85
+
+		path = {
+			leads_to_tech = cp_armor_tech_46
+			research_cost_coeff = 1
+		}
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 4 y = 10 }
 		}
 		
 		categories = {
@@ -807,9 +1115,15 @@ technologies = {
 	}
 
 	cp_armor_tech_33 = {
-		
-		enable_equipments = {
-			tank_destroyer_equipment
+
+		category_tanks = {
+			reliability = 0.01
+			max_strength = 0.05
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_34
+			research_cost_coeff = 1
 		}
 
 		research_cost = 2
@@ -817,7 +1131,7 @@ technologies = {
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 0 y = 7 }
+			position = { x = -1 y = 5 }
 		}
 		
 		categories = {
@@ -830,11 +1144,167 @@ technologies = {
 	}
 
 	cp_armor_tech_34 = {
-		enable_equipments = {
-			tank_destroyer_equipment
-		}	
 
-		research_cost = 2
+		enable_equipments = {
+			cyberwalk_equipment_1
+		} 
+
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = armor_cyberwalk }
+			NOT = { any_country_division = { division_has_battalion_in_template = armor_cyberwalk } }
+		}
+
+		on_research_complete = {
+			## Unlocks are handled through event. Extra Immersion
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			custom_effect_tooltip = UNLOCK_FREE_DIVISION
+			country_event = cp_tech_event.6
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_35
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_36
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.5
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = -1 y = 7 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_35 = {
+
+		category_cyberwalks = {
+			reliability = 0.02
+			max_strength = 0.1
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = cyberwalk_A_upgrade_variant
+		}
+
+		research_cost = 2.25
+
+		path = {
+			leads_to_tech = cp_armor_tech_37
+			research_cost_coeff = 1
+		}
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = -2 y = 9 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_36 = {
+
+		category_cyberwalks = {
+			breakthrough = 0.02
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = cyberwalk_C_upgrade_variant
+		}
+
+		research_cost = 2.25
+
+		path = {
+			leads_to_tech = cp_armor_tech_38
+			research_cost_coeff = 1
+		}
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 0 y = 9 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_37 = {
+
+		category_cyberwalks = {
+			maximum_speed = 0.02 
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = cyberwalk_D_upgrade_variant
+		}
+
+		research_cost = 2.25
+
+		path = {
+			leads_to_tech = cp_armor_tech_45
+			research_cost_coeff = 1
+		}
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = -2 y = 11 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_38 = {
+
+		category_cyberwalks = {
+			max_organisation = 1
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = cyberwalk_B_upgrade_variant
+		}
+
+		research_cost = 2.25
+		
+		path = {
+			leads_to_tech = cp_armor_tech_45
+			research_cost_coeff = 1
+		}
 
 		start_year = 2040
 		folder = {
@@ -851,43 +1321,45 @@ technologies = {
 		}
 	}
 
-	cp_armor_tech_35 = {
-		
-		path = {
-			leads_to_tech = cp_armor_tech_37
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2
+	cp_armor_tech_39 = {
 
-		start_year = 2040
-		folder = {
-			name = "vehicle_folder"
-			position = { x = 16 y = 8 }
-		}
-		
-		categories = {
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-	}
+		enable_equipments = {
+			hovercraft_tank_equipment_1
+		} 
 
-	cp_armor_tech_36 = {
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = armor_hovercraft_tank }
+			NOT = { any_country_division = { division_has_battalion_in_template = armor_hovercraft_tank } }
+		}
+
+		on_research_complete = {
+			## Unlocks are handled through event. Extra Immersion
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			custom_effect_tooltip = UNLOCK_FREE_DIVISION
+			country_event = cp_tech_event.5
+		}
 
 		path = {
-			leads_to_tech = cp_armor_tech_38
+			leads_to_tech = cp_armor_tech_40
 			research_cost_coeff = 1
-		}	
-		
-		research_cost = 2
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_41
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_42
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.5
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 16 y = 10 }
+			position = { x = 7 y = 6 }
 		}
 		
 		categories = {
@@ -899,18 +1371,80 @@ technologies = {
 		}
 	}
 
-	cp_armor_tech_37 = {
+	cp_armor_tech_40 = {
+
+		category_hovercrafts = {
+			max_organisation = 1
+			maximum_speed = 0.02
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = hovercraft_B_upgrade_variant
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 6 y = 8 }
+		}
 		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_41 = {
+
+		category_hovercrafts = {
+			supply_consumption = -0.02
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 8 y = 8 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_42 = {
+
 		enable_equipments = {
-			tank_destroyer_equipment
+			hovercraft_tank_equipment_2
+		} 
+
+		path = {
+			leads_to_tech = cp_armor_tech_43
+			research_cost_coeff = 1
 		}
 
-		research_cost = 2
+		path = {
+			leads_to_tech = cp_armor_tech_44
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 19 y = 7 }
+			position = { x = 7 y = 10 }
 		}
 		
 		categories = {
@@ -922,17 +1456,69 @@ technologies = {
 		}
 	}
 
-	cp_armor_tech_38 = {
+	cp_armor_tech_43 = {
+
+		category_hovercrafts = {
+			soft_attack = 0.025
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 6 y = 12 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_44 = {
+
+		category_hovercrafts = {
+			breakthrough = 0.025
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = unlock_variant_tech
+			custom_effect_tooltip = hovercraft_C_upgrade_variant
+		}
+
+		research_cost = 2.25
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 8 y = 12 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_45 = {
+
 		enable_equipments = {
-			tank_destroyer_equipment
-		}	
+			cyberwalk_equipment_2
+		} 
 
-		research_cost = 2
+		research_cost = 3
 
 		start_year = 2040
 		folder = {
 			name = "vehicle_folder"
-			position = { x = 19 y = 11 }
+			position = { x = -1 y = 13 }
 		}
 		
 		categories = {
@@ -943,4 +1529,68 @@ technologies = {
 			factor = 100
 		}
 	}
+
+	cp_armor_tech_46 = {
+
+		category_light_battle_tank = {
+			soft_attack = 0.025
+		}
+
+		research_cost = 1.85
+
+		path = {
+			leads_to_tech = cp_armor_tech_46
+			research_cost_coeff = 1
+		}
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 3 y = 12 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	cp_armor_tech_47 = {
+
+		enable_equipments = {
+			superheavy_battle_tank_equipment_2
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_24
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = cp_armor_tech_25
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3.5
+
+		start_year = 2040
+		folder = {
+			name = "vehicle_folder"
+			position = { x = 15 y = 13 }
+		}
+		
+		categories = {
+			armor
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
 }
+
+

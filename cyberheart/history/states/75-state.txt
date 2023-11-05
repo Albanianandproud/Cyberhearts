@@ -8,8 +8,16 @@ state={
 		owner = OXC
 		add_core_of = OXC
 		buildings = { infrastructure = 1 }
+		victory_points = { 7206 1}#Coatzacoalcos
+		victory_points = { 12810 1}#Heroica Veracruz
+		victory_points = { 12079 1}#Tampico
+		victory_points = { 10732 1}#Poza Rica
 	}
 	manpower=7100000
 	buildings_max_level_factor=1.000
-	state_category=rural
+
+	state_category=state_level_05
+
+	
+
 }

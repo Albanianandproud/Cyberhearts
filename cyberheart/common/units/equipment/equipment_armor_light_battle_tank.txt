@@ -9,6 +9,8 @@ equipments = {
 		is_convertable = yes
 		type = armor
 		group_by = archetype
+		
+		interface_category = interface_category_armor
 	}
 
 	light_battle_tank_equipment_1 = {
@@ -19,8 +21,12 @@ equipments = {
 		priority = 10
 		visual_level = 1
 		
-		#upgrades = {
-		#}
+		upgrades = {
+			light_tank_A_upgrade
+			light_tank_B_upgrade
+			light_tank_C_upgrade
+			light_tank_D_upgrade
+		}
 
 		## TODO : STATS CHANGE ##
 		

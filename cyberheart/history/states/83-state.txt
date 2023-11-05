@@ -8,8 +8,14 @@ state={
 		owner = MXC
 		add_core_of = MXC
 		buildings = { infrastructure = 1 }
+		victory_points = { 10123 1}#La Paz
+		victory_points = { 1904 1}#Guerro Negro
 	}
 	manpower=450000
 	buildings_max_level_factor=1.000
-	state_category=rural
+
+	state_category=state_level_01
+	resources={
+        uranium = 3
+	}
 }

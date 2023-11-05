@@ -8,8 +8,10 @@ state={
 		add_core_of = MXC
 		buildings = {
 			infrastructure = 1
-
 		}
+		victory_points = { 10832 1}#Chilpancingo
+		victory_points = { 5066 1}#Acapulco
+		victory_points = { 4887 1}#Ciudad Altamirano
 
 	}
 
@@ -18,6 +20,10 @@ state={
 	}
 	manpower=5500000
 	buildings_max_level_factor=1.000
-	state_category=rural
+
+	state_category=state_level_05
+
+	
+
 	local_supplies=0.000
 }

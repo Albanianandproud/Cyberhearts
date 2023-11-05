@@ -8,8 +8,16 @@ state={
 		owner = MXC
 		add_core_of = MXC
 		buildings = { infrastructure = 1 }
+		victory_points = { 12088 1}#Teacapán
+		victory_points = { 8057 1}#Mazatlán
+		victory_points = { 1945 1}#Los Mochis
+		victory_points = { 4977 1}#Ciudad Obregón
 	}
-	manpower=2050000
+	manpower=3250000
 	buildings_max_level_factor=1.000
-	state_category=rural
+
+	state_category=state_level_04
+
+	
+
 }

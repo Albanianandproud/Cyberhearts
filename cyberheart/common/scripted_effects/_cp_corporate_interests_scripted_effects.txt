@@ -1,3 +1,9 @@
+create_pie_chart_list = {
+	GetCorporateInterestsPercentages = yes
+	create_pie_chart = yes
+	create_pie_chart_corporate = yes
+}
+
 GetCorporateInterestsPercentages = {
 	set_variable = { CorporateInterestsTotal = 0 } 
     add_to_variable = {	CorporateInterestsTotal = CI_nationalised }
@@ -287,4 +293,8 @@ create_pie_chart = {
 
 	clear_variable = ROOT.last_idx
 	add_to_variable = { pie_chart_dirty = 1 }
+}
+
+create_pie_chart_corporate = {
+	
 }

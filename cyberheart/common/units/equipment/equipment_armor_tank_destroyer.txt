@@ -21,8 +21,12 @@ equipments = {
 		priority = 10
 		visual_level = 1
 		
-		#upgrades = {
-		#}
+		upgrades = {
+			tank_destroyer_A_upgrade
+			tank_destroyer_B_upgrade
+			tank_destroyer_C_upgrade
+			tank_destroyer_D_upgrade
+		}
 
 		## TODO : STATS CHANGE ##
 		

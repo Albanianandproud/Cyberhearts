@@ -21,8 +21,12 @@ equipments = {
 		priority = 10
 		visual_level = 1
 		
-		#upgrades = {
-		#}
+		upgrades = {
+			cyberwalk_A_upgrade
+			cyberwalk_B_upgrade
+			cyberwalk_C_upgrade
+			cyberwalk_D_upgrade
+		}
 
 		## TODO : STATS CHANGE ##
 		

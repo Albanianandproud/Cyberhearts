@@ -8,16 +8,16 @@ state={
 		add_core_of = CIP
 		buildings = {
 			infrastructure = 1
-
 		}
-
+		victory_points = { 12867 1}#villahermosa
 	}
 
 	provinces={
 		2021 7148 12867 
 	}
-	manpower=1650000
+	manpower=650000
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=state_level_04	
+	
 	local_supplies=0.000
 }
